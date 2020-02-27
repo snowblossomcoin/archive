@@ -7,7 +7,7 @@ class Message:
         self.template_name = "message"
 
     def timestamp(self):
-        return 0
+        return "0"
 
     def human_datetime(self):
         ts = float(self.timestamp())

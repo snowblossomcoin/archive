@@ -7,11 +7,11 @@
                         </div>
                     </div>
                     {{- message.text() }}
-                    {% if message.files() %}
+                    {%- if message.files() -%}
                     <div class="files">
                     {%- for extension, file in message.files() -%}
                         <a href="../_files/{{ file['id'] }}{{ extension }}">
-                            {{- file['title'] }} -
+                            {{- file['title'] -}}
                             {%- if 'thumb_64' in file -%}
                                 <img alt="" src="../_files/{{ file['id'] }}_thumb_64.png"/>
                             {%- endif -%}

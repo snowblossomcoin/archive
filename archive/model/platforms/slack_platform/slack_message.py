@@ -1,6 +1,5 @@
 from archive.model.message import Message
 import re
-import html
 import logging
 import mimetypes
 
@@ -29,7 +28,7 @@ class SlackMessage(Message):
         self.users = users
 
     def timestamp(self):
-        return float(self.data['ts'])
+        return self.data['ts']
 
     def __repr__(self):
         return self.data['ts']
@@ -64,10 +63,10 @@ class SlackMessage(Message):
 
         if 'attachments' in self.data:
             for attachment in self.data['attachments']:
-                if 'fallback' in attachment:
+                if 'text' in attachment:
+                    text += attachment['text']
+                elif 'fallback' in attachment:
                     text += attachment['fallback']
-                if 'title_link' in attachment:
-                    text += attachment['title_link']
 
         # text = html.escape(text)
         # user_mention_regex = r'(&lt;@([^(?!&gt;)]+)&gt;)'

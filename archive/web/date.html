@@ -8,8 +8,8 @@
 {% endblock %}
 {% block center %}
             <div class="messages">
-                {%- for message in messages -%}
+                {% for message in messages -%}
                 {%- include [message.template_name, '.html']|join() -%}
-                {%- endfor -%}
+                {%- endfor %}
             </div>
 {% endblock %}

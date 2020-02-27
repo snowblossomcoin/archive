@@ -14,11 +14,11 @@
         <div class="left">
             <div class="fixed">
                 <div class="context">
-                {%- if node.config['legacy'] -%}
-                <!-- LEGACY / SINGLE COMMUNITY -->
-                {%- endif -%}
+                {%- if node.config['legacy'] %}
+                    <!-- LEGACY / SINGLE COMMUNITY -->
+                {% endif -%}
                 {%- for n in node.html_path.nodes() -%}
-                    {%- set depth = node.html_path.depth() - n.html_path.depth() -%}
+                    {% set depth = node.html_path.depth() - n.html_path.depth() -%}
                     {# legacy support, allows you to only sync the directory of the community #}
                     {%- if node.config['legacy'] and loop.index0 == 0 -%}
                         {%- set depth = depth - 1 -%}
