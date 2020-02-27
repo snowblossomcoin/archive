@@ -1,0 +1,22 @@
+                <div id="{{ message.timestamp() }}" class="message slack">
+                    <div class="metadata">
+                        <a class="timestamp" href="#{{ message.timestamp() }}">{{ message.human_datetime() }}</a>
+                        <div class="user">
+                            <img alt='' class="avatar" src="../_avatars/{{ message.avatar() }}.png">
+                            <div class="name">{{ message.username() }}</div>
+                        </div>
+                    </div>
+                    {{- message.text() }}
+                    {% if message.files() %}
+                    <div class="files">
+                    {%- for extension, file in message.files() -%}
+                        <a href="../_files/{{ file['id'] }}{{ extension }}">
+                            {{- file['title'] }} -
+                            {%- if 'thumb_64' in file -%}
+                                <img alt="" src="../_files/{{ file['id'] }}_thumb_64.png"/>
+                            {%- endif -%}
+                        </a>
+                    {%- endfor -%}
+                    </div>
+                    {% endif %}
+                </div>

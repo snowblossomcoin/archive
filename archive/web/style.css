@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  font-family: monospace;
+}
+body > .left {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 200px;
+  justify-content: center;
+  padding: 1em;
+}
+body > .center {
+  display: flex;
+  flex-grow: 1;
+  min-width: 600px;
+  max-width: 1200px;
+}
+body > .right {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+body > .left > .fixed {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+}
+.context {
+  display: flex;
+  flex-direction: column;
+  font-size: 14pt;
+  align-items: center;
+}
+.context a {
+  padding: 0.5em 1em;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+.navigation > * {
+  padding: 1em;
+}
+body > .center > .list {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+}
+body > .center > .list > a {
+  padding: 0.5em 0.5em;
+}
+.messages {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+}
+.message {
+  display: block;
+  padding: 0.5em;
+  line-height: 150%
+}
+.message > .files {
+  display: inline-flex;
+}
+.message > .files > a {
+  display: inline-flex;
+  align-items: center;
+}
+.message > .files > a > img {
+  margin-left: 0.5em;
+}
+.message:nth-child(odd) {
+  background-color: #00000005;
+}
+.message:target {
+  background-color: palegreen;
+}
+.message + .message {
+  border-top: 1px solid #00000022
+}
+.message > .metadata {
+  display: inline-flex;
+  font-weight: bold;
+  min-width: 12em;
+  margin-right: 0.5em;
+}
+.message > .metadata > .timestamp {
+  text-decoration: underline;
+}
+.message > .metadata > .user {
+  display: flex;
+  margin-left: 0.5em;
+  align-items: center;
+}
+.message > .metadata > .user > .avatar {
+  height: 1.5em;
+  margin-right: 0.5em;
+}
+.message .user_mention {
+  color: red;
+  display: inline-flex;
+  margin-right: 0.5em;
+}
+a {
+  color: black;
+  transition: 0.5s background-color;
+}
+a:hover:not([href=""]) {
+  background-color: #00000010;
+  transition: 0.5s background-color;
+}
+a[href=""] {
+  text-decoration: none;
+}

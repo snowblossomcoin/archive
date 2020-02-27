@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{%- block children -%}
+{%- for child in node.children -%}
+                <a href="{{ child.name }}.html">{{ child.name }}</a>
+{%- endfor -%}
+{%- endblock -%}
