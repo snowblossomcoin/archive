@@ -2,7 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}{%  endblock %}</title>
+        <title>
+            {{- node.html_path.nodes() | map(attribute='name') | list | join(' - ') -}}
+            {%- if node.html_path._is_file %} - {{ node.name }}{%- endif -%}
+        </title>
         {# legacy support, allows you to only sync the directory of the community #}
         {%- set depth = ([0, node.html_path.depth() - 1]|sort)[-1] -%}
         <link rel="stylesheet" type="text/css" href="{{ depth * '../' }}style.css">

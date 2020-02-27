@@ -23,7 +23,6 @@ class Archive(Node):
     def fetch(self, *args, **kwargs):
         pass
 
-    @Log.decorator
     def render(self, *args, **kwargs):
         self.html_path.copy(archive.web_path / 'style.css')
         self.html_template.render()

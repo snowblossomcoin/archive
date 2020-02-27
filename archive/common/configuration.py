@@ -4,7 +4,7 @@ import json
 
 
 default_config = {
-    "log_level": "debug",
+    "log_level": 10,
     "raw_path": "log_test/raw/",
     "html_path": "log_test/html/",
     "legacy": False,

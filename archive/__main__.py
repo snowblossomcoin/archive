@@ -12,7 +12,7 @@ config = configuration.mix_configs([
 logging.basicConfig(format="%(asctime)s:" + logging.BASIC_FORMAT, level=logging.WARNING)
 logging.getLogger("asyncio").setLevel(logging.WARNING)
 logging.getLogger("slack").setLevel(logging.WARNING)
-logging.getLogger("archive").setLevel(getattr(logging, config['log_level'].upper()))
+logging.getLogger("archive").setLevel(int(config['log_level']))
 
 a = Archive(config)
 

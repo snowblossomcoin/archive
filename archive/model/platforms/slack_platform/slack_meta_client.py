@@ -32,7 +32,7 @@ class SlackMetaClient(PlatformMetaClient):
                 try:
                     r = requests.get(
                         profile.get('image_72') or profile.get('image_64') or profile.get('image_48'),
-                        # headers={"Authorization": f"Bearer {self.credentials['token']}"}
+                        # headers={"Authorization": f"Bearer {self.credentials['token']}"} # nope
                     )
                     r.raise_for_status()
                     with open(save_as, 'wb') as f:
