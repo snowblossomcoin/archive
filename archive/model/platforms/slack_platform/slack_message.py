@@ -63,13 +63,10 @@ class SlackMessage(Message):
 
         if 'attachments' in self.data:
             for attachment in self.data['attachments']:
-                if 'text' in attachment:
-                    text += attachment['text']
-                elif 'fallback' in attachment:
-                    text += attachment['fallback']
-
-        # text = html.escape(text)
-        # user_mention_regex = r'(&lt;@([^(?!&gt;)]+)&gt;)'
+                if 'text' in attachment and attachment['text']:
+                    text += ' ' + attachment['text']
+                elif 'fallback' in attachment and attachment['fallback']:
+                    text += ' ' + attachment['fallback']
 
         user_mention_regex = r'(<@([^>]+)>)'
         matches = re.findall(user_mention_regex, text)

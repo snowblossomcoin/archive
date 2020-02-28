@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-{% block navigation %}
+{%- block navigation %}
                 <div class="navigation">
                     <a href="{{ prev_href }}">prev</a>
                     <a href="{{ node.name }}.html">{{ node.name }}</a>
                     <a href="{{ next_href }}">next</a>
                 </div>
-{% endblock %}
-{% block center %}
+{% endblock -%}
+{%- block content %}
             <div class="messages">
                 {% for message in messages -%}
                 {%- include [message.template_name, '.html']|join() -%}
                 {%- endfor %}
             </div>
-{% endblock %}
+{% endblock -%}
