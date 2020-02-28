@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='archive',
-    version='0.1.2',
+    version='0.1.3',
     url='',
     license='',
     author='clueless',

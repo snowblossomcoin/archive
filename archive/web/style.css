@@ -1,3 +1,6 @@
+html {
+  overflow-y: scroll;
+}
 body {
   margin: 0;
   padding: 1em;
@@ -19,7 +22,6 @@ body {
   position: fixed;
   display: flex;
   flex-direction: column;
-  flex-grow: 0.25;
   min-width: 14em;
   align-items: center;
   top: 50%;
@@ -55,8 +57,8 @@ body {
   justify-content: center;
   margin: 1em;
 }
-body > .center > .list > a {
-  padding: 0.5em 0.5em;
+.content > .list > a {
+  padding: 0.5em 1em;
 }
 .messages {
   display: flex;
@@ -123,7 +125,8 @@ a:hover:not([href=""]) {
 a[href=""] {
   text-decoration: none;
 }
-@media (max-aspect-ratio: 3/1) {
+@media (max-width: 800px) {
+/*@media (max-aspect-ratio: 3/1) {*/
   .context-placeholder {
     display: none;
   }
@@ -131,11 +134,15 @@ a[href=""] {
     position: inherit;
     transform: none;
     justify-content: center;
+    max-height: 8em;
   }
   .path {
     flex-direction: row;
   }
   .center {
     flex-direction: column;
+  }
+  .messages {
+    justify-content: inherit;
   }
 }

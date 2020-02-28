@@ -1,6 +1,8 @@
 {% extends "base.html" %}
-{%- block children -%}
-{%- for child in node.children -%}
-                <a href="{{ child.name }}.html">{{ child.name }}</a>
-{%- endfor -%}
+{%- block content %}
+                <div class="list">
+                    {%- for child in node.children %}
+                    <a href="{{ child.name }}.html">{{ child.name }}</a>
+                    {%- endfor %}
+                </div>
 {%- endblock -%}
