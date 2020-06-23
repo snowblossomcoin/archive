@@ -34,7 +34,6 @@ class SlackPlatform(Platform):
             self.html_path() / '_avatars',
             # don't bother overwriting
             ignore=lambda path, files: [f for f in files if (self.html_path() / '_avatars' / f).is_file()],
-            dirs_exist_ok=True
         )
         # copy files
         shutil.copytree(
@@ -42,6 +41,5 @@ class SlackPlatform(Platform):
             self.html_path() / '_files',
             # don't bother overwriting
             ignore=lambda path, files: [f for f in files if (self.html_path() / '_avatars' / f).is_file()],
-            dirs_exist_ok=True
         )
         self.html_template.render()

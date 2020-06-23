@@ -1,14 +1,16 @@
 from setuptools import setup, find_packages
 
+
 setup(
     name='archive',
-    version='0.1.3',
+    version='0.1.4',
     url='',
     license='',
     author='clueless',
     author_email='',
     description='export logs for various platforms',
     packages=find_packages(),
+    python_requires=">=3.7"
     install_requires=[
         'slackclient',
         'jinja2',
