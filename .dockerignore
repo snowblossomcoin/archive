@@ -1,0 +1,7 @@
+.idea
+venv
+*egg*
+*.pyc
+config.json
+log_test/
+test*.py
