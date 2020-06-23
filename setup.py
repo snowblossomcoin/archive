@@ -10,7 +10,7 @@ setup(
     author_email='',
     description='export logs for various platforms',
     packages=find_packages(),
-    python_requires=">=3.7"
+    python_requires=">=3.7",
     install_requires=[
         'slackclient',
         'jinja2',
